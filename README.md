@@ -4,6 +4,8 @@ This is a repo, containing up-to-date results of game research information provi
 By publishing this repo, we are hoping to find and attract more people that are interested in the Mafia 2 researching/modding/reversing,
 and possibly even contributing to make this thing even better.
 
+This sdk support only steam version of the game.
+
 Prjects using this library:
 
 * Mafia 2 Online
