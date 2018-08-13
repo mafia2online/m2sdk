@@ -18,7 +18,7 @@ namespace M2
     public:
         bool IsCarKnown(int unk)
         {
-            return Mem::InvokeFunction<Mem::call_this, bool>(0xBB3F50, this, unk);
+            return Mem::InvokeFunction<Mem::call_this, bool>(0xBB3F50, unk);
         }
     };
 };
