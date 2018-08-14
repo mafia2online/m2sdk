@@ -14,6 +14,8 @@
 #include "CCar.hpp"
 #include "CScene.hpp"
 
+#include <functional>
+
 namespace M2
 {
     enum E_Command : int

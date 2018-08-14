@@ -1,4 +1,9 @@
-
+/** @file CCarOwnerDB.cpp
+*  @brief Game's action wrapper
+*
+*
+*  @author Tyldar (darreugne@gmail.com)
+*/
 #include <functional>
 
 #pragma once

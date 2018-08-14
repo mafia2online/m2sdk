@@ -9,6 +9,8 @@
 #include "CEntity.hpp"
 #include "CHuman2.hpp"
 
+#include <functional>
+
 namespace M2
 {
     enum E_PlayerMovementType : BYTE
