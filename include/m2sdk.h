@@ -102,6 +102,7 @@ namespace M2 {
 /* Classes */
 #include "classes/CActor.hpp"
 #include "classes/CActorVehicle.hpp"
+#include "classes/CAIController.hpp"
 #include "classes/CApplication.hpp"
 #include "classes/CAvailableStations.hpp"
 #include "classes/ccamera.hpp"
