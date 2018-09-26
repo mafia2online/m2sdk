@@ -3,6 +3,10 @@
 
 #include <windows.h>
 #include <detours.h>
+#include <assert.h>
+#include <unordered_map>
+
+#define m2sdk_assert assert
 
 #ifndef M2SDK_H
 #define M2SDK_H
@@ -196,10 +200,10 @@ namespace M2 {
 
 /* Wrappers */
 #include "wrappers/camera.hpp"
-#include "wrappers/entity.hpp"
 #include "wrappers/game.hpp"
 #include "wrappers/lua.hpp"
 #include "wrappers/models.hpp"
+#include "wrappers/entity.hpp"
 #include "wrappers/radio.hpp"
 #include "wrappers/config.hpp"
 
@@ -208,10 +212,6 @@ namespace M2 {
 #define _SCL_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <unordered_map>
-#include <assert.h>
-
-#define m2sdk_assert assert
 m2sdk_callback g_gamemodule_callback = nullptr;
 
 DWORD GameStartDrive__Return;
