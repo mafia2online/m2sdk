@@ -25,3 +25,15 @@ namespace M2
         }
     };
 };
+
+
+#ifdef MAFIA_SDK_IMPLEMENTATION
+
+void *M2::GetCameraWorldViewProjection()
+{
+    auto camera = M2::C_GameCamera::Get()->GetCamera(1);
+    return camera ? (void *)&camera->m_pGameCamera->m_worldViewProjection : NULL;
+}
+
+#endif // MAFIA_SDK_IMPLEMENTATION
+
