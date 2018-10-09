@@ -11,7 +11,8 @@ namespace M2
     enum eEntityType
     {
         MOD_ENTITY_CAR,
-        MOD_ENTITY_PED
+        MOD_ENTITY_PED,
+        MOD_ENTITY_PLAYER
     };
 
     namespace Wrappers
@@ -58,6 +59,18 @@ M2::C_Entity *M2::Wrappers::CreateEntity(eEntityType type, int modelID)
         }
         break;
 
+        case MOD_ENTITY_PLAYER:
+        {
+            //M2::Models::GetPlayerModelFromID(modelID, &dir, &model);
+
+            pPedModelManager = pModelManager->Load("/sds/player/", "VITPRA");
+            m2sdk_assert(pPedModelManager);
+
+            entity = reinterpret_cast<M2::C_Entity*>(M2::C_EntityFactory::Get()->CreateEntity<M2::C_Player2>(M2::EntityTypes::Entity_Player));
+            m2sdk_assert(entity);
+        }
+        break;
+
         case MOD_ENTITY_CAR:
         {
             M2::Models::GetVehicleModelFromID(modelID, &dir, &model);
@@ -87,6 +100,15 @@ M2::C_Entity *M2::Wrappers::CreateEntity(eEntityType type, int modelID)
             entity->Setup();
 
             DWORD flags = entity->m_dwFlags &= 0xFFFFB7BF | 0x4800;
+            entity->m_dwFlags = flags;
+        }
+        break;
+
+        case MOD_ENTITY_PLAYER:
+        {
+            entity->Setup();
+
+            DWORD flags = entity->m_dwFlags &= 0xFFFFFFBF | 0x10000;
             entity->m_dwFlags = flags;
         }
         break;
