@@ -197,6 +197,7 @@ namespace M2 {
 #include "classes/CWeatherManager.hpp"
 #include "classes/CWrappersList.hpp"
 #include "classes/CHuman2CarWrapper.hpp"
+#include "classes/IActorActionModule.hpp"
 
 /* Wrappers */
 #include "wrappers/camera.hpp"
