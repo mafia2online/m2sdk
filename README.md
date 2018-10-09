@@ -17,6 +17,7 @@ $ git clone git@github.com:mafia2online/m2sdk.git
 ```
 
 ```c
+#define MAFIA_SDK_IMPLEMENTATION
 #include <m2sdk/m2sdk.h>
 ```
 
