@@ -145,6 +145,7 @@ namespace M2 {
 #include "classes/CHud.hpp"
 #include "classes/CHudScriptW.hpp"
 #include "classes/chuman2.hpp"
+#include "classes/CHuman2Commands.hpp"
 #include "classes/CHumanHeadController.hpp"
 #include "classes/CHumanInventory.hpp"
 #include "classes/CHumanScript.hpp"

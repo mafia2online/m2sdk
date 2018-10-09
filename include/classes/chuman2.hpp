@@ -15,34 +15,28 @@
 #include "CCar.hpp"
 #include "CScene.hpp"
 
+#include "CHuman2Commands.hpp"
+
 #include <functional>
 
 namespace M2
 {
     enum E_Command : int
     {
-        COMMAND_STAND = 0,
-        COMMAND_MOVEDIR = 1,
-        COMMAND_MOVETO = 2,
-        COMMAND_OBSTACLE = 4,
-        COMMAND_SPECIAL = 5,
-        COMMAND_COVER = 6,
-        COMMAND_ANIMPLAY = 7,
-        COMMAND_ACTION = 8,
-        COMMAND_CAR = 9,
-        COMMAND_FIGHT = 10,
-        COMMAND_DEATH = 11,
-        COMMAND_USEOBJECT = 12,
-        COMMAND_ANIMPLAYEFFECT = 13,
-        COMMAND_ADDITACTION = 14
-    };
-
-    struct S_HumanCommandMoveDir
-    {
-        pad(S_HumanCommandMoveDir, pad0, 0x50);
-        float x;
-        float y;
-        float z;
+        COMMAND_STAND = 0,//0x1E
+        COMMAND_MOVEDIR = 1,//0x58
+        COMMAND_MOVETO = 2,//0x2C
+        COMMAND_OBSTACLE = 4,//0x40
+        COMMAND_SPECIAL = 5,//0x20
+        COMMAND_COVER = 6,//0x78
+        COMMAND_ANIMPLAY = 7,//0x94
+        COMMAND_ACTION = 8,//0x68
+        COMMAND_CAR = 9,//0x34
+        COMMAND_FIGHT = 10,//0x78
+        COMMAND_DEATH = 11,//0x24
+        COMMAND_USEOBJECT = 12,//0x2C
+        COMMAND_ANIMPLAYEFFECT = 13,//0x68
+        COMMAND_ADDITACTION = 14//0x20
     };
 
     class unknow
@@ -65,6 +59,10 @@ namespace M2
         pad(ICHuman2, pad2, 0x4);
 		C_HumanWeaponController *m_pWeaponController;	//00B0 - 00B4
         C_HumanHeadController   *m_pHeadController;     //00B4 - 00B8
+        pad(ICHuman2, pad4, 0x7C);                      //00B8 - 0134
+        C_CommandDescription    m_aCommandsArray[8];    //0134 - 0138
+        pad(ICHuman2, pad5, 0x4);                       //0138 - 0178
+        uint32_t                m_iCurrentCommand;      //0178 - 
 	};
 
 	class C_Human2 : public ICHuman2
