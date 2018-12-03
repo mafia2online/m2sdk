@@ -13,8 +13,8 @@ namespace M2
     {
         TYPE_NEW_GAME = 0,
         TYPE_CONTINUE = 1,
-        TYPE_UNK = 2,
-        TYPE_RESTART = 3
+        TYPE_RETRY_MISSION = 2,
+        TYPE_LOAD_CHAPTER = 3
     };
 
     class ICGuiGame
